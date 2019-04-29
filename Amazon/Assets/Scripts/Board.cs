@@ -1,6 +1,12 @@
 ﻿public class Board {
 
-    public Entity[,] CellGrid;
+    private Entity[,] cellGrid;
 
+    public Entity[,] GetGrid() {
+        return cellGrid;
+    }
 
+    public void SetupGrid() {
+
+    }
 }

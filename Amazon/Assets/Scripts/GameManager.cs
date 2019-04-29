@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int[,] grid;
     public int mapSizeX = 10;
     public int mapSizeY = 10;
 
@@ -24,20 +23,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grid = new int[mapSizeX, mapSizeY];
-
-        for (int x = 0; x < mapSizeX; x++)
-        {
-            for (int y = 0; y < mapSizeY; y++)
-            {
-                grid[x, y] = 0;
-            }
-        }
-
         Map = new GameObject[mapSizeX,mapSizeY];
-
-
-
         GenerateMap();
         GeneratePlayers();
 
@@ -49,11 +35,11 @@ public class GameManager : MonoBehaviour
         {
             for (int y = 0; y < mapSizeY; y++)
             {
-                Map[x, y] = (GameObject)Instantiate(gridType[grid[x, y]].VisualPrefab, new Vector2(x, y), Quaternion.identity);
-                Map[x, y].GetComponent<Type>().type = gridType[grid[x, y]];
+                Map[x, y] = (GameObject)Instantiate(gridType[0].VisualPrefab, new Vector2(x, y), Quaternion.identity);
+                Map[x, y].GetComponent<Type>().type = gridType[0];
 
 
-                if (Map[x, y].GetComponent<Type>().type.clickAble)
+                if (Map[x, y].GetComponent<Type>().type.clickable)
                 {
                     OnClick oc = Map[x, y].GetComponent<OnClick>();
                     oc.posX = x;

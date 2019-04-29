@@ -9,7 +9,7 @@ public class GridType
     public GameObject VisualPrefab;
 
 
-    public bool clickAble = true;
+    public bool clickable = true;
 
 
 }

@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posX: 0
   posY: 0
+  gameManager: {fileID: 0}
+  Moving: 1
 --- !u!114 &-2489700248966539394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,3 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c25917f49f2be4c94c643a2d666ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type:
+    name: 
+    VisualPrefab: {fileID: 0}
+    clickable: 1

@@ -96,7 +96,7 @@ MonoBehaviour:
   type:
     name: 
     VisualPrefab: {fileID: 0}
-    clickAble: 1
+    clickable: 0
 --- !u!1001 &5792532783957506803
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,4 @@ public class PlayerPos : MonoBehaviour
 {
     public int playerX;
     public int playerY;
-
-
-
 }

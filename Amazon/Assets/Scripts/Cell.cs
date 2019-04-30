@@ -29,4 +29,8 @@ public class Cell : MonoBehaviour {
             }
         }
     }
+
+    private void Awake() {
+
+    }
 }

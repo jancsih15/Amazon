@@ -34,4 +34,10 @@ public class EntityTests {
         }
         Assert.False(correct);
     }
+
+    [Test]
+    public void BoardLengthTest() {
+        Board board = new Board();
+        Assert.AreEqual(64, board.GetGrid().Length);
+    }
 }

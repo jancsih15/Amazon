@@ -7,6 +7,7 @@ public class Entity {
     private Position position;
     private EntityType entityType;
 
+    public Position Position { get; set; }
     public EntityType GetEntityType() => entityType;
 
     public Entity(Position position, EntityType entityType) {

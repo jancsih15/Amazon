@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class EntityTests {
 
+    private Board board;
+
+    [SetUp]
+    public void SetupBoard() {
+        board = new Board();
+    }
+
     [Test]
     [TestCase(0, 0)]
     [TestCase(7, 7)]
@@ -37,7 +44,39 @@ public class EntityTests {
 
     [Test]
     public void BoardLengthTest() {
-        Board board = new Board();
         Assert.AreEqual(64, board.GetGrid().Length);
+    }
+
+    [Test]
+    public void PlaceEntityToOccupiedSpotTest() {
+        bool correct;
+        try {
+            Entity entity = new Entity(EntityType.Blue);
+            entity.Position = new Position(0, 0);
+            board.PlaceEntity(entity, entity.Position);
+            board.PlaceEntity(entity, entity.Position);
+            correct = true;
+        } catch (System.Exception) {
+            correct = false;
+        }
+        Assert.False(correct);
+    }
+
+    [Test]
+    public void MoveEntityToOccupiedSpot() {
+        bool correct;
+        try {
+            Entity entity1 = new Entity(EntityType.Blue);
+            entity1.Position = new Position(0, 0);
+            Entity entity2 = new Entity(EntityType.Blue);
+            entity2.Position = new Position(5, 0);
+            board.PlaceEntity(entity1, entity1.Position);
+            board.PlaceEntity(entity2, entity2.Position);
+            board.MoveEntity(entity2, entity1.Position);
+            correct = true;
+        } catch (System.Exception) {
+            correct = false;
+        }
+        Assert.False(correct);
     }
 }

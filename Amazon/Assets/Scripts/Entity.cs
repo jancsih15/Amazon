@@ -10,8 +10,7 @@ public class Entity {
     public Position Position { get; set; }
     public EntityType GetEntityType() => entityType;
 
-    public Entity(Position position, EntityType entityType) {
-        this.position = position;
+    public Entity(EntityType entityType) {
         this.entityType = entityType;
     }
 }

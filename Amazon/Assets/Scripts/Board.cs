@@ -1,4 +1,6 @@
-﻿public class Board {
+﻿
+
+public class Board {
 
     private Entity[,] cellGrid;
 
@@ -6,7 +8,11 @@
         return cellGrid;
     }
 
-    public void SetupGrid() {
+    public Board() {
+        SetupGrid();
+    }
 
+    public void SetupGrid() {
+        
     }
 }

@@ -5,22 +5,33 @@ using UnityEngine;
 
 public class EntityTests {
 
-    public bool ThrowsExceptionOnConstruction(int x, int y) {
+    [Test]
+    [TestCase(0, 0)]
+    [TestCase(7, 7)]
+    public void NewPositionCorrectTest(int x, int y) {
+        bool correct;
         try {
-            new Entity(x, y);
-            return false;
+            new Position(x, y);
+            correct = true;
         } catch (System.Exception) {
-            return true;
+            correct = false;
         }
+        Assert.True(correct);
     }
 
     [Test]
-    public void EntityConstructTest() {
-        Assert.False(ThrowsExceptionOnConstruction(0, 0));
-        Assert.False(ThrowsExceptionOnConstruction(7, 7));
-        Assert.True(ThrowsExceptionOnConstruction(12, 0));
-        Assert.True(ThrowsExceptionOnConstruction(3, 53));
-        Assert.True(ThrowsExceptionOnConstruction(12, 53));
-        Assert.True(ThrowsExceptionOnConstruction(4, -20));
+    [TestCase(5, 12)]
+    [TestCase(12, 5)]
+    [TestCase(-2, 5)]
+    [TestCase(-2, -2)]
+    public void NewPositionThrowsTest(int x, int y) {
+        bool correct;
+        try {
+            new Position(x, y);
+            correct = true;
+        } catch (System.Exception) {
+            correct = false;
+        }
+        Assert.False(correct);
     }
 }
